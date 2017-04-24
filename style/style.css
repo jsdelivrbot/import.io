@@ -1,0 +1,66 @@
+/*Invoices Nav link positioning*/
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  margin-right: 200px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.navbar {
+  line-height: 45px;
+  background: #9ad3de;
+}
+
+.invoices-header {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 50px 0;
+  font-family: roboto;
+  font-weight: 600;
+}
+
+.table-container {
+  margin: 0 auto;
+  width: 76.5%;
+}
+
+.table-header {
+  background: #89bdd3;
+  color: white;
+}
+
+.landing-page-text {
+  color: #95a4ac;
+  text-align: center;
+  margin: 30px auto;
+  width: 60%;
+}
+
+.logo {
+  height: 50px;
+  width: 100px;
+}
+
+td {
+  max-width: 145px;
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+.delete-button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-confirmation-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

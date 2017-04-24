@@ -1,0 +1,286 @@
+exports[`test CreateInvoice snapshot test 1`] = `
+<thead
+  className="table-header">
+  <tr>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter an item
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="item"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter a quantity
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="quantity"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter a price
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="price"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th />
+    <th />
+    <th>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsSize="small"
+        bsStyle="primary"
+        disabled={false}
+        onClick={[Function]}>
+        Add Invoice
+      </Button>
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`test DeleteInvoice snapshot test 1`] = `
+<div
+  className="delete-confirmation-modal">
+  <h6>
+    Are you sure?
+  </h6>
+  <div>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      className="btn btn-info btn-sm delete-button"
+      disabled={false}
+      onClick={[Function]}
+      value="close">
+      Cancel
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      className="btn btn-danger btn-sm delete-button"
+      disabled={false}
+      onClick={[Function]}
+      value="submit">
+      Delete
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`test Invoices snapshot test 1`] = `
+<div>
+  <h1
+    className="invoices-header">
+    Invoices
+  </h1>
+  <div
+    className="table-container">
+    <table
+      className="table table-hover col-xs-2 ">
+      <thead
+        className="table-header">
+        <tr>
+          <th>
+            Item
+          </th>
+          <th>
+            Qty
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Total
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            Delete
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+      <Connect(CreateInvoice) />
+      <tbody>
+        <tr>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            Subtotal
+          </td>
+          <td>
+            $
+          </td>
+        </tr>
+        <tr>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            Tax(5%)
+          </td>
+          <td>
+            $
+          </td>
+        </tr>
+        <tr>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            Total
+          </td>
+          <td>
+            $
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`test UpdateInvoiceModalForm snapshot test 1`] = `
+<thead
+  className="table-header">
+  <tr>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter an item
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="item"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter a quantity
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="quantity"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th>
+      <p
+        style={
+          Object {
+            "color": "red",
+            "display": "none",
+          }
+        }>
+        Please enter a price
+      </p>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="price"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+        type="text"
+        value="" />
+    </th>
+    <th />
+    <th />
+    <th>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsSize="small"
+        bsStyle="primary"
+        disabled={false}
+        onClick={[Function]}>
+        Add Invoice
+      </Button>
+    </th>
+  </tr>
+</thead>
+`;
