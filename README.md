@@ -34,12 +34,14 @@ These items will be calculated/re-calculated upon each action taken i.e. create,
 
 ### Tests
 4 snapshot tests provide some coverage for the UI.
+
 4 reducer tests provide 100% coverage for reducer functionality.
 
 On the command line type 'jest' and the tests will run.
 
 ## Stack
   FrontEnd: React + Redux + React-Router + React-Bootstrap
+
   Testing: Jest and Enzyme
 
 
