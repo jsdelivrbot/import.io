@@ -15,9 +15,11 @@ class UpdateInvoiceButton extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  //toggle closes modal's that pop up after hitting submit.
+  //toggle is used to help close the modal after hitting submit.
   toggle() {
     if (!this.state.show) {
+      // I needed a manual way open/close and used react-bootstrap's
+      //native methods i.e. overlay.show() overlay.hide()
       this.refs.overlay.show();
       this.setState({
         show: !this.state.show

@@ -52,16 +52,21 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
       }
 
     case UPDATE_INVOICE:
-      let updatedInvoice;
+
+      let updatingInvoice;
+
+        //first find the invoice to update
         for(var i = 0; i < state.allInvoices.length; i++){
           if (state.allInvoices[i].id === action.payload.id) {
-            updatedInvoice = state.allInvoices[i];
+            // re-label it
+            updatingInvoice = state.allInvoices[i];
 
-            let prevQuantity = updatedInvoice.quantity
-            let prevPrice = updatedInvoice.price
+            let prevQuantity = updatingInvoice.quantity
+            let prevPrice = updatingInvoice.price
             let prevTax = (prevQuantity * prevPrice) * .05
             let prevSubtotal = prevQuantity * prevPrice
 
+            //subtract amounts from 'updating' invoice
             subtotal -= prevSubtotal
             tax -= prevTax
             total -= (prevTax + prevSubtotal)
@@ -71,13 +76,14 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
             let currTax = (currQuantity * currPrice) * .05
             let currSubtotal = currQuantity * currPrice
 
+            //add amounts from 'updated' invoice
             subtotal += currQuantity * currPrice
             tax += currTax
             total += currTax + currSubtotal
 
-            updatedInvoice.item = action.payload.item;
-            updatedInvoice.quantity = action.payload.quantity;
-            updatedInvoice.price = action.payload.price;
+            updatingInvoice.item = action.payload.item;
+            updatingInvoice.quantity = action.payload.quantity;
+            updatingInvoice.price = action.payload.price;
           }
         }
 

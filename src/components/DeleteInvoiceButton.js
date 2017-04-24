@@ -16,12 +16,15 @@ class DeleteInvoiceButton extends Component {
     this.toggle = this.toggle.bind(this)
   }
 
+  //toggle is used to help close the modal after hitting delete.
   toggle() {
     if (!this.state.show) {
+      // I needed a manual way open/close and used react-bootstrap's
+      //native methods i.e. overlay.show() overlay.hide()
       this.refs.overlay.show();
       this.setState({
         show: !this.state.show
-      });
+      })
     } else {
       this.refs.overlay.hide();
       this.setState({
