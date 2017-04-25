@@ -25,7 +25,7 @@ class UpdateInvoiceModalForm extends Component {
 
 
   handleFormValidation (item, quantity, price) {
-    var numbers = /^[0-9]+$/;
+    var numbers = /^[0-9.]+$/;
 
     // reset UI warnings to give people the chance to start fresh on each edit
     this.setState({
