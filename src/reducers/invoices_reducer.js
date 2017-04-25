@@ -12,7 +12,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
     case GET_INVOICES:
       return {
         ...state,
-        subtotal,
+        subtotal: Number(subtotal.toFixed(2)),
         tax: Number(tax.toFixed(2)),
         total: Number(total.toFixed(2)),
       };
@@ -28,7 +28,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         action.payload,
           ...state.allInvoices
         ],
-        subtotal,
+        subtotal: Number(subtotal.toFixed(2)),
         tax: Number(tax.toFixed(2)),
         total: Number(total.toFixed(2))
       }
@@ -46,7 +46,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         allInvoices: [
         ...state.allInvoices.filter(invoice => invoice.id !== action.payload.id)
         ],
-        subtotal,
+        subtotal: Number(subtotal.toFixed(2)),
         tax: Number(tax.toFixed(2)),
         total: Number(total.toFixed(2))
       }
@@ -89,7 +89,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
 
     return {
       ...state,
-      subtotal,
+      subtotal: Number(subtotal.toFixed(2)),
       tax: Number(tax.toFixed(2)),
       total: Number(total.toFixed(2)),
     }

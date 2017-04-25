@@ -58,10 +58,25 @@ class UpdateInvoiceModalForm extends Component {
     }
 
 
-    if (price.match(numbers) && price !== '') {
-      this.setState({
-        formValPrice: 'none'
-      })
+    if ( price.match(/^[0-9.]+$/) && price !== '') {
+      let decimalCount = 0;
+
+      for (let i = 0; i < price.length; i++) {
+        if (price[i] === '.') {
+          decimalCount++;
+        }
+
+        if (decimalCount > 1 ) {
+          this.setState({
+            formValPrice: 'inline-block'
+          })
+          return false;
+        } else {
+          this.setState({
+            formValPrice: 'none'
+          })
+        }
+      }
     } else {
       this.setState({
         formValPrice: 'inline-block'

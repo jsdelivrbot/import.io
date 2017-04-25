@@ -44,7 +44,7 @@ class CreateInvoice extends Component {
 
 
   handleFormValidation (item, quantity, price) {
-    var numbers = /^[0-9.]+$/;
+
 
     // reset UI warnings to give people the chance to start fresh on each edit
     this.setState({
@@ -66,7 +66,7 @@ class CreateInvoice extends Component {
     }
 
 
-    if (quantity.match(numbers) && quantity !== '') {
+    if (quantity.match(/^[0-9]+$/) && quantity !== '') {
       this.setState({
         formValQuantity: 'none'
       })
@@ -77,10 +77,25 @@ class CreateInvoice extends Component {
       return false;
     }
 
-    if (price.match(numbers) && price !== '') {
-      this.setState({
-        formValPrice: 'none'
-      })
+    if ( price.match(/^[0-9.]+$/) && price !== '') {
+      let decimalCount = 0;
+
+      for (let i = 0; i < price.length; i++) {
+        if (price[i] === '.') {
+          decimalCount++;
+        }
+
+        if (decimalCount > 1 ) {
+          this.setState({
+            formValPrice: 'inline-block'
+          })
+          return false;
+        } else {
+          this.setState({
+            formValPrice: 'none'
+          })
+        }
+      }
     } else {
       this.setState({
         formValPrice: 'inline-block'
