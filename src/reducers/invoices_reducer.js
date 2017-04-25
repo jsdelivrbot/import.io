@@ -5,6 +5,19 @@ let subtotal = 0;
 let tax = 0;
 let total = 0;
 
+let decimalFix = (tax) => {
+  tax = Number(tax.toFixed(2)) + ''
+  let taxLen = tax.length
+  let decimalLocation = tax.indexOf('.')
+
+  if (decimalLocation === taxLen - 2) {
+    tax += '0'
+    return tax
+  } else {
+    return Number(tax.toFixed(2))
+  }
+}
+
 
 export default function(state = { allInvoices: [], subtotal, tax, total }, action = {}) {
   switch (action.type) {
@@ -13,7 +26,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
       return {
         ...state,
         subtotal: Number(subtotal.toFixed(2)),
-        tax: Number(tax.toFixed(2)),
+        tax: decimalFix(tax),
         total: Number(total.toFixed(2)),
       };
 
@@ -22,6 +35,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
       tax = subtotal * .05
       total = subtotal + tax
 
+      console.log('subtotal', subtotal, total)
       return {
         ...state,
         allInvoices: [
@@ -29,7 +43,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
           ...state.allInvoices
         ],
         subtotal: Number(subtotal.toFixed(2)),
-        tax: Number(tax.toFixed(2)),
+        tax: decimalFix(tax),
         total: Number(total.toFixed(2))
       }
 
@@ -47,7 +61,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         ...state.allInvoices.filter(invoice => invoice.id !== action.payload.id)
         ],
         subtotal: Number(subtotal.toFixed(2)),
-        tax: Number(tax.toFixed(2)),
+        tax: decimalFix(tax),
         total: Number(total.toFixed(2))
       }
 
@@ -90,7 +104,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
     return {
       ...state,
       subtotal: Number(subtotal.toFixed(2)),
-      tax: Number(tax.toFixed(2)),
+      tax: decimalFix(tax),
       total: Number(total.toFixed(2)),
     }
   }
