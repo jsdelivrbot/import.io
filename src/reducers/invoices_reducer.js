@@ -7,14 +7,15 @@ let total = 0;
 
 let decimalFix = (tax) => {
   tax = Number(tax.toFixed(2)) + ''
-  let taxLen = tax.length
+
+  let taxLen = tax.length - 1
   let decimalLocation = tax.indexOf('.')
 
-  if (decimalLocation === taxLen - 2) {
+  if (decimalLocation === taxLen - 1) {
     tax += '0'
     return tax
   } else {
-    return Number(tax.toFixed(2))
+    return Number(tax)
   }
 }
 
@@ -27,7 +28,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         ...state,
         subtotal: Number(subtotal.toFixed(2)),
         tax: decimalFix(tax),
-        total: Number(total.toFixed(2)),
+        total: decimalFix(total)
       };
 
     case CREATE_INVOICE:
@@ -44,7 +45,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         ],
         subtotal: Number(subtotal.toFixed(2)),
         tax: decimalFix(tax),
-        total: Number(total.toFixed(2))
+        total: decimalFix(total)
       }
 
     case DELETE_INVOICE:
@@ -62,7 +63,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
         ],
         subtotal: Number(subtotal.toFixed(2)),
         tax: decimalFix(tax),
-        total: Number(total.toFixed(2))
+        total: decimalFix(total)
       }
 
     case UPDATE_INVOICE:
@@ -105,7 +106,7 @@ export default function(state = { allInvoices: [], subtotal, tax, total }, actio
       ...state,
       subtotal: Number(subtotal.toFixed(2)),
       tax: decimalFix(tax),
-      total: Number(total.toFixed(2)),
+      total: decimalFix(total)
     }
   }
 

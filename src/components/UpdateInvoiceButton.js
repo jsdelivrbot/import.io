@@ -41,9 +41,11 @@ class UpdateInvoiceButton extends Component {
           trigger="manual"
           placement="left"
           overlay={
-          <Popover id="popover-positioned-left" className='popover-form-fields'>
-            {<UpdateInvoiceModalForm hide={this.toggle} invoice={this.props.invoice} handleUpdating={this.props.handleUpdating}/>}
-          </Popover>}>
+            <Popover id="popover-positioned-left" className='popover-form-fields'>
+              {<UpdateInvoiceModalForm hide={this.toggle} invoice={this.props.invoice} handleUpdating={this.props.handleUpdating}/>}
+            </Popover>
+          }
+        >
           <FontAwesome onClick={this.toggle} name='edit' size='lg' className='edit-button'/>
         </OverlayTrigger>
       </ButtonToolbar>

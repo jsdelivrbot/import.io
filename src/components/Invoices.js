@@ -106,7 +106,7 @@ class Invoices extends Component {
                 <td></td>
                 <td></td>
                 <td>Tax(5%)</td>
-                <td>${this.props.tax}</td>
+                <td>${this.props.tax === '00' ? '0' : this.props.tax}</td>
               </tr>
               <tr>
                 <td></td>
@@ -114,7 +114,7 @@ class Invoices extends Component {
                 <td></td>
                 <td></td>
                 <td>Total</td>
-                <td>${this.props.total}</td>
+                <td>${this.props.total === '00' ? '0' : this.props.total}</td>
               </tr>
             </tbody>
           </table>

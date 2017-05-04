@@ -43,9 +43,11 @@ class DeleteInvoiceButton extends Component {
           trigger="manual"
           placement="left"
           overlay={
-          <Popover id="popover-positioned-left" className='popover-form-fields'>
-            {<DeleteInvoice invoice={this.props.invoice} hide={this.toggle}/>}
-          </Popover>}>
+            <Popover id="popover-positioned-left" className='popover-form-fields'>
+              {<DeleteInvoice invoice={this.props.invoice} hide={this.toggle}/>}
+            </Popover>
+          }
+        >
           <FontAwesome onClick={this.toggle} name='remove' size='lg' className='delete-button'/>
         </OverlayTrigger>
       </ButtonToolbar>

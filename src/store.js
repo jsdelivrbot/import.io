@@ -5,3 +5,4 @@ import reducers from './reducers'
 const store = createStore(reducers, composeWithDevTools());
 
 export default store
+
